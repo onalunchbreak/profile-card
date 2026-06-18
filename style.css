@@ -67,7 +67,7 @@ body {
 
 /* Background Blur Decorations */
 .bg-blur {
-  position: absolute;
+  position: fixed;
   width: 500px;
   height: 500px;
   border-radius: 50%;
