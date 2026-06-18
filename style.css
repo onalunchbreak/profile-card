@@ -1,0 +1,563 @@
+/* CSS Design System and Stylesheet for Profile Card */
+
+:root {
+  /* Colors - Light Theme (Default) */
+  --bg-primary: #f1f5f9;
+  --bg-secondary: rgba(255, 255, 255, 0.75);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-primary: #6366f1;
+  --accent-secondary: #10b981;
+  --border-color: rgba(255, 255, 255, 0.6);
+  --btn-bg: #e2e8f0;
+  --btn-text: #334155;
+  --btn-hover: #cbd5e1;
+  
+  /* Blurs & Shadows */
+  --card-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.12);
+  --glass-blur: blur(20px) saturate(180%);
+  --transition-speed: 0.3s;
+  
+  /* Fonts */
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+  --bg-primary: #090d16;
+  --bg-secondary: rgba(17, 24, 39, 0.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-primary: #818cf8;
+  --accent-secondary: #34d399;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --btn-bg: #1e293b;
+  --btn-text: #f1f5f9;
+  --btn-hover: #334155;
+  
+  --card-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+/* Base resets & styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+              color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Background Blur Decorations */
+.bg-blur {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.bg-blur-1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.6) 0%, rgba(168, 85, 247, 0) 70%);
+  top: -10%;
+  left: -10%;
+}
+
+.bg-blur-2 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(59, 130, 246, 0) 70%);
+  bottom: -10%;
+  right: -10%;
+}
+
+body.dark-mode .bg-blur {
+  opacity: 0.25;
+}
+
+/* Main Container Layout */
+.profile-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Profile Layout Grid */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media (min-width: 992px) {
+  .profile-layout {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+}
+
+/* Accessibility: Custom keyboard focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle {
+  align-self: flex-end;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color var(--transition-speed) ease,
+              border-color var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+  background-color: var(--btn-hover);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Icon Switching Logic */
+.theme-toggle .sun-icon {
+  display: none;
+  width: 22px;
+  height: 22px;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+body.dark-mode .theme-toggle .sun-icon {
+  display: block;
+}
+
+body.dark-mode .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Profile Card Styling */
+.profile-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  padding: 32px 24px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: transform var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color var(--transition-speed) ease,
+              border-color var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Avatar Header and Active Indicator */
+.card-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 4px solid var(--bg-secondary);
+  transition: border-color var(--transition-speed) ease;
+}
+
+/* Pulsing Status Indicator */
+.status-indicator {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: #10b981; /* bright green */
+  border: 3px solid var(--bg-secondary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+  animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+body.dark-mode .profile-avatar {
+  border-color: #111827;
+}
+
+body.dark-mode .status-indicator {
+  border-color: #111827;
+}
+
+/* Typography elements */
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.profile-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.profile-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+/* Footer & Social Connections */
+.card-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+}
+
+.social-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Social Buttons & Tooltips */
+.social-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              background-color 0.2s ease,
+              color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease;
+}
+
+/* Tooltip implementation */
+.social-tooltip {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.social-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-primary);
+}
+
+.social-btn:hover .social-tooltip,
+.social-btn:focus-visible .social-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Tooltip and background theme color overrides for specific social networks */
+.linkedin-btn:hover {
+  background-color: #0077b5;
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(0, 119, 181, 0.5);
+  transform: scale(1.08) translateY(-3px);
+}
+
+.instagram-btn:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(220, 39, 67, 0.5);
+  transform: scale(1.08) translateY(-3px);
+}
+
+.whatsapp-btn:hover {
+  background-color: #25d366;
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(37, 211, 102, 0.5);
+  transform: scale(1.08) translateY(-3px);
+}
+
+.social-btn:hover .social-icon {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustment for extra small devices */
+@media (max-width: 360px) {
+  .profile-card {
+    padding: 24px 16px;
+  }
+  .avatar-wrapper {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Projects Section & Grid Styling */
+.projects-section {
+  width: 100%;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-primary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Project Card Specific Styling */
+.project-card {
+  text-align: left;
+}
+
+.project-card .card-header {
+  justify-content: flex-start;
+}
+
+.project-card .avatar-wrapper {
+  width: 70px;
+  height: 70px;
+  padding: 2px;
+}
+
+.project-card .profile-avatar {
+  border-width: 2px;
+}
+
+.project-card .status-indicator {
+  width: 14px;
+  height: 14px;
+  bottom: 2px;
+  right: 2px;
+  border-width: 2px;
+}
+
+.project-card .profile-name {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.project-card .profile-title {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.project-card .profile-bio {
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+  min-height: 70px;
+}
+
+.project-card .card-footer {
+  padding-top: 16px;
+}
+
+.project-card .social-heading {
+  margin-bottom: 12px;
+}
+
+/* Project Status and Social Button Overrides */
+.status-live {
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+  animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.github-btn:hover {
+  background-color: #24292e;
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(36, 41, 46, 0.5);
+  transform: scale(1.08) translateY(-3px);
+}
+
+body.dark-mode .github-btn:hover {
+  background-color: #f0f6fc;
+  color: #161b22;
+}
+
+.demo-btn:hover {
+  background-color: var(--accent-secondary);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.5);
+  transform: scale(1.08) translateY(-3px);
+}
+
+/* Prefers Reduced Motion Settings */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .profile-card:hover {
+    transform: none !important;
+  }
+
+  .theme-toggle:hover,
+  .social-btn:hover,
+  .linkedin-btn:hover,
+  .instagram-btn:hover,
+  .whatsapp-btn:hover,
+  .github-btn:hover,
+  .demo-btn:hover {
+    transform: none !important;
+  }
+  
+  .status-indicator {
+    animation: none !important;
+  }
+}

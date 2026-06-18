@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional Profile Card for Pankaj Gupta - Developer Portfolio">
+  <title>Pankaj Gupta - Profile Card</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background decorative elements for rich aesthetics -->
+  <div class="bg-blur bg-blur-1" aria-hidden="true"></div>
+  <div class="bg-blur bg-blur-2" aria-hidden="true"></div>
+
+  <!-- Main container -->
+  <main class="profile-container">
+    
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark theme" aria-live="polite">
+      <!-- Sun icon (shown in dark mode) -->
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+      </svg>
+      <!-- Moon icon (shown in light mode) -->
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+      </svg>
+    </button>
+
+    <div class="profile-layout">
+      <!-- Profile Card Article -->
+      <article class="profile-card">
+        <div class="card-header">
+          <div class="avatar-wrapper">
+            <img src="pankaj_avatar.png" alt="Pankaj Gupta smiling, dressed in a professional blue suit" class="profile-avatar">
+            <span class="status-indicator" aria-label="Status: Available for work"></span>
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <h1 class="profile-name">Pankaj Gupta</h1>
+          <p class="profile-title">Software Engineer & UI Specialist</p>
+          <p class="profile-bio">
+            Passionate software engineer building beautiful, highly accessible, and premium user experiences. 
+            Dedicated to clean code, performance, and craft in web development.
+          </p>
+        </div>
+
+        <div class="card-footer">
+          <h2 class="social-heading">Connect with me</h2>
+          <div class="social-links">
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn" aria-label="Open Pankaj Gupta's LinkedIn Profile">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span class="social-tooltip">LinkedIn</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn" aria-label="Open Pankaj Gupta's Instagram Profile">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span class="social-tooltip">Instagram</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn" aria-label="Start a WhatsApp conversation with Pankaj Gupta">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.989 3.3 1.503 4.94 1.505 5.548 0 10.064-4.512 10.068-10.066.002-2.69-1.043-5.22-2.941-7.119C16.816 1.673 14.288.629 12.004.629 6.456.629 1.943 5.14 1.94 10.695c0 1.748.459 3.454 1.332 4.979l-1.017 3.714 3.792-.994zM18.06 14.61c-.329-.165-1.948-.963-2.248-1.073-.299-.11-.517-.165-.736.165-.218.329-.846 1.073-1.037 1.293-.19.22-.381.247-.71.082-.329-.165-1.389-.512-2.647-1.633-.978-.873-1.638-1.951-1.83-2.28-.19-.33-.02-.509.145-.673.149-.147.33-.384.495-.577.164-.192.219-.33.329-.55.11-.22.055-.412-.028-.577-.082-.165-.736-1.775-1.009-2.433-.266-.64-.537-.553-.736-.563-.19-.01-.408-.012-.627-.012-.218 0-.573.082-.873.412-.3.33-1.145 1.118-1.145 2.727 0 1.609 1.172 3.16 1.336 3.38 1.64 2.185 3.16 3.013 5.16 3.816.592.238 1.13.38 1.536.509.61.193 1.166.166 1.605.101.49-.073 1.948-.797 2.221-1.566.273-.769.273-1.428.192-1.565-.082-.138-.299-.22-.627-.384z"/>
+              </svg>
+              <span class="social-tooltip">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Projects Section -->
+      <section class="projects-section" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          
+          <!-- Project 1: DevFlow -->
+          <article class="profile-card project-card">
+            <div class="card-header">
+              <div class="avatar-wrapper project-image-wrapper">
+                <img src="devflow_avatar.png" alt="DevFlow project logo" class="profile-avatar project-avatar">
+                <span class="status-indicator status-live" aria-label="Project Status: Live"></span>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <h3 class="profile-name project-name">DevFlow</h3>
+              <p class="profile-title project-tech">React &bull; Node.js &bull; MongoDB</p>
+              <p class="profile-bio project-description">
+                A highly interactive Q&A community web app for developers. Features real-time comment voting, rich markdown post editor, and AI recommendation feeds.
+              </p>
+            </div>
+
+            <div class="card-footer">
+              <h4 class="social-heading">Project Links</h4>
+              <div class="social-links">
+                <!-- GitHub Repository -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn github-btn" aria-label="View DevFlow on GitHub">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  <span class="social-tooltip">GitHub</span>
+                </a>
+                <!-- Live Demo -->
+                <a href="https://devflow.example.com" target="_blank" rel="noopener noreferrer" class="social-btn demo-btn" aria-label="Visit DevFlow Live Site">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span class="social-tooltip">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: ZenFit -->
+          <article class="profile-card project-card">
+            <div class="card-header">
+              <div class="avatar-wrapper project-image-wrapper">
+                <img src="zenfit_avatar.png" alt="ZenFit project logo" class="profile-avatar project-avatar">
+                <span class="status-indicator status-live" aria-label="Project Status: Live"></span>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <h3 class="profile-name project-name">ZenFit</h3>
+              <p class="profile-title project-tech">React Native &bull; Expo &bull; Firebase</p>
+              <p class="profile-bio project-description">
+                A minimalist wellness mobile tracking app. Integrates custom guided meditation timelines, biometric sensor integration, and offline health reports.
+              </p>
+            </div>
+
+            <div class="card-footer">
+              <h4 class="social-heading">Project Links</h4>
+              <div class="social-links">
+                <!-- GitHub Repository -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn github-btn" aria-label="View ZenFit on GitHub">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  <span class="social-tooltip">GitHub</span>
+                </a>
+                <!-- Live Demo -->
+                <a href="https://zenfit.example.com" target="_blank" rel="noopener noreferrer" class="social-btn demo-btn" aria-label="Visit ZenFit Live Site">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span class="social-tooltip">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: CryptoSphere -->
+          <article class="profile-card project-card">
+            <div class="card-header">
+              <div class="avatar-wrapper project-image-wrapper">
+                <img src="cryptosphere_avatar.png" alt="CryptoSphere project logo" class="profile-avatar project-avatar">
+                <span class="status-indicator status-live" aria-label="Project Status: Live"></span>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <h3 class="profile-name project-name">CryptoSphere</h3>
+              <p class="profile-title project-tech">Next.js &bull; Tailwind &bull; WebSockets</p>
+              <p class="profile-bio project-description">
+                A high-speed financial trading dashboard. Feeds live token prices, provides visual trading volume charts, and features smart contract alert systems.
+              </p>
+            </div>
+
+            <div class="card-footer">
+              <h4 class="social-heading">Project Links</h4>
+              <div class="social-links">
+                <!-- GitHub Repository -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn github-btn" aria-label="View CryptoSphere on GitHub">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  <span class="social-tooltip">GitHub</span>
+                </a>
+                <!-- Live Demo -->
+                <a href="https://cryptosphere.example.com" target="_blank" rel="noopener noreferrer" class="social-btn demo-btn" aria-label="Visit CryptoSphere Live Site">
+                  <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span class="social-tooltip">Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
