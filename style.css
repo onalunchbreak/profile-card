@@ -673,19 +673,16 @@ body.dark-mode .github-btn:hover {
 
 /* Footer Styling */
 .main-footer {
-  max-width: 1200px;
-  width: calc(100% - 48px);
-  padding: 18px 24px; /* Reduced padding from 32px */
+  width: 100%;
+  padding: 24px 0;
   text-align: center;
-  border-top: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-radius: 20px; /* Rounded corners to match cards */
-  margin: 40px auto 24px auto; /* Centered, reduced margins, bottom margin of 24px instead of unlimited blank space */
-  box-shadow: var(--card-shadow);
-  transition: background-color var(--transition-speed) ease,
-              border-color var(--transition-speed) ease;
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  margin-top: 40px;
+  margin-bottom: 24px;
 }
 
 .main-footer p {
